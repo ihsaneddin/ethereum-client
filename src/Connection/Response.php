@@ -48,6 +48,10 @@ class Response implements ResponseInterface {
     return $result;
   }
 
+  public function getResult(string $key = null){
+    return $this->result($key);
+  }
+
   public function unaltered_result(){
     if (is_array($this->result)){
       $this->result = collect($this->result);
