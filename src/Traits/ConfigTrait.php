@@ -8,10 +8,10 @@ trait ConfigTrait{
   protected $config;
 
   protected function setup_config(array $config=array(), $file='config.php'){
-    if(is_null($file)){
-      $file = __DIR__. '/../config.php';
+    if(!is_null($file)){
+      $default = __DIR__. '/../config.php';
+      $this->config = collect($default)->merge($config);
     }
-    $this->config = collect($default)->merge($config);
   }
 
   public function set_config(array $config){
