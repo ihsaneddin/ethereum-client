@@ -40,7 +40,7 @@ class Ethereum implements HasConfig {
   use EncodeHexTrait;
 
   protected function boot_construct(array $config=array()){
-    $this->setup_config($config, dirname(__FILE__). '/config.php');
+    $this->setup_config($config, __DIR__. '/config.php');
   }
 
   public static function get_instance( $config= array() ){

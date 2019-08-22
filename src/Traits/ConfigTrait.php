@@ -8,7 +8,9 @@ trait ConfigTrait{
   protected $config;
 
   protected function setup_config(array $config=array(), $file='config.php'){
-    $default = include $file;
+    if(is_null($file)){
+      $file = __DIR__. '/../config.php';
+    }
     $this->config = collect($default)->merge($config);
   }
 
