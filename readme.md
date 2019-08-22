@@ -1,0 +1,1 @@
+       "tightenco/collect": "dev-master",
