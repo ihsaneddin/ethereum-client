@@ -15,6 +15,7 @@ class TransactionReceipt extends EthereumRestObject{
     "cumulativegasused" => "cumulative_gas_used",
     "gas_used" => "gas_used",
     "gasused" => "gas_used",
+    "logs" => "logs",
     "logsbloom" => "logs_bloom",
     "logs_bloom" => "logs_bloom",
     "root" => "root",
@@ -52,6 +53,18 @@ class TransactionReceipt extends EthereumRestObject{
   }
 
   protected function get_transaction_hash(){ return $this->__transaction_hash; }
+
+  protected $__logs;
+
+  protected  function init_logs($value){
+    return $this->__logs= $value;
+  }
+
+  protected function set_logs($value){
+    return $this->init_logs($value);
+  }
+
+  protected function get_logs(){ return $this->__logs; }
 
   protected $__status;
   protected  function init_status($value){
